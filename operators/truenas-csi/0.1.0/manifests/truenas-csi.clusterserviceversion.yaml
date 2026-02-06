@@ -28,7 +28,7 @@ metadata:
     features.operators.openshift.io/cnf: "false"
     features.operators.openshift.io/cni: "false"
     features.operators.openshift.io/csi: "true"
-    features.operators.openshift.io/disconnected: "false"
+    features.operators.openshift.io/disconnected: "true"
     features.operators.openshift.io/fips-compliant: "false"
     features.operators.openshift.io/proxy-aware: "false"
     features.operators.openshift.io/tls-profiles: "false"
@@ -636,4 +636,21 @@ spec:
   provider:
     name: TrueNAS
     url: https://www.truenas.com
+  relatedImages:
+  - name: truenas-csi-operator
+    image: quay.io/truenas_solutions/truenas-csi-operator:v0.1.0
+  - name: truenas-csi-driver
+    image: quay.io/truenas_solutions/truenas-csi:v0.1.0
+  - name: csi-provisioner
+    image: registry.k8s.io/sig-storage/csi-provisioner:v5.1.0
+  - name: csi-attacher
+    image: registry.k8s.io/sig-storage/csi-attacher:v4.7.0
+  - name: csi-snapshotter
+    image: registry.k8s.io/sig-storage/csi-snapshotter:v8.2.0
+  - name: csi-resizer
+    image: registry.k8s.io/sig-storage/csi-resizer:v1.12.0
+  - name: csi-node-driver-registrar
+    image: registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.12.0
+  - name: livenessprobe
+    image: registry.k8s.io/sig-storage/livenessprobe:v2.14.0
   version: 0.1.0
